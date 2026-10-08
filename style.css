@@ -1984,7 +1984,8 @@
   }
 
   .hero-description {
-    max-width: 480px;
+    width: 82%;
+    max-width: 340px;
     margin-bottom: 20px;
     font-size: 14px;
     line-height: 1.5;
