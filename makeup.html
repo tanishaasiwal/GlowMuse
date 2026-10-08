@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GlowMuse</title>
+    <link rel="stylesheet" href="style2.css" />
+    <link rel="stylesheet" href="commerce.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+      integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://api.fontshare.com/css?f[]=clash-display@400,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="logo1.png" alt="" height="50px" />
+      </div>
+      <button
+        class="nav-menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-controls="primaryNav"
+        aria-expanded="false"
+      >
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+      <ul class="nav-links" id="primaryNav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="skincare.html">Skincare</a></li>
+        <li><a href="makeup.html">Makeup</a></li>
+        <li><a href="haircare.html">Haircare</a></li>
+        <li><a href="fragrance.html">Fragrance</a></li>
+      </ul>
+      <div class="nav-icons">
+        <!-- ❤️ Wishlist -->
+        <button class="nav-icon wishlist-icon" aria-label="Wishlist">
+          <i class="fa-regular fa-heart"></i>
+          <span class="wishlist-count" id="wishlistCount">0</span>
+        </button>
+
+        <!-- 🛒 Cart -->
+        <button class="nav-icon cart-icon" aria-label="Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <!-- 👤 User -->
+        <button class="nav-icon user-icon" aria-label="Profile">
+          <i class="fa-regular fa-user"></i>
+        </button>
+      </div>
+    </nav>
+    <main>
+      <section class="page-banner">
+        <div class="banner-content">
+          <nav class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span class="current">Makeup</span>
+          </nav>
+          <h1 class="banner-title">Makeup Collection</h1>
+          <p class="banner-sub">
+            Express your vibe with our premium range of lipsticks, foundations,
+            and eye essentials — crafted for every mood.
+          </p>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════
+       SHADE / FINISH SELECTOR
+       ═══════════════════════════════════════════ -->
+      <section class="concern-selector">
+        <div class="concern-container">
+          <span class="concern-tag">💄 Find Your Shade</span>
+          <h2 class="concern-heading">What's Your Makeup Vibe?</h2>
+          <p class="concern-sub">Select a finish to see matching products</p>
+
+          <div class="concern-pills">
+            <button class="concern-pill active" data-concern="all">
+              <span class="concern-icon">✨</span> All Products
+            </button>
+            <button class="concern-pill" data-concern="matte">
+              <span class="concern-icon">🌹</span> Matte
+            </button>
+            <button class="concern-pill" data-concern="glossy">
+              <span class="concern-icon">💧</span> Glossy
+            </button>
+            <button class="concern-pill" data-concern="natural">
+              <span class="concern-icon">🌿</span> Natural
+            </button>
+            <button class="concern-pill" data-concern="bold">
+              <span class="concern-icon">🔥</span> Bold
+            </button>
+            <button class="concern-pill" data-concern="shimmer">
+              <span class="concern-icon">✨</span> Shimmer
+            </button>
+            <button class="concern-pill" data-concern="everyday">
+              <span class="concern-icon">☀️</span> Everyday
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════
+       FILTERS + PRODUCTS
+       ═══════════════════════════════════════════ -->
+      <section class="shop-section">
+        <div class="shop-container">
+          <!-- LEFT: Filters -->
+          <aside class="filters">
+            <div class="filter-group">
+              <h4 class="filter-title">Category</h4>
+              <label><input type="checkbox" value="skincare" /> Skincare</label>
+              <label
+                ><input type="checkbox" value="makeup" checked /> Makeup</label
+              >
+              <label><input type="checkbox" value="haircare" /> Haircare</label>
+              <label
+                ><input type="checkbox" value="fragrance" /> Fragrance</label
+              >
+            </div>
+
+            <div class="filter-group">
+              <h4 class="filter-title">Price Range</h4>
+              <input
+                type="range"
+                min="100"
+                max="2000"
+                value="2000"
+                class="price-slider"
+                id="priceSlider"
+              />
+              <div class="price-labels">
+                <span>₹100</span>
+                <span id="priceValue">₹2000</span>
+              </div>
+            </div>
+
+            <div class="filter-group">
+              <h4 class="filter-title">Product Type</h4>
+              <label><input type="checkbox" value="lipstick" /> Lipstick</label>
+              <label
+                ><input type="checkbox" value="foundation" /> Foundation</label
+              >
+              <label
+                ><input type="checkbox" value="eyeshadow" /> Eyeshadow</label
+              >
+              <label><input type="checkbox" value="mascara" /> Mascara</label>
+              <label><input type="checkbox" value="blush" /> Blush</label>
+            </div>
+
+            <div class="filter-group">
+              <h4 class="filter-title">Finish</h4>
+              <label><input type="checkbox" value="matte" /> Matte</label>
+              <label><input type="checkbox" value="glossy" /> Glossy</label>
+              <label><input type="checkbox" value="natural" /> Natural</label>
+              <label><input type="checkbox" value="shimmer" /> Shimmer</label>
+            </div>
+
+            <div class="filter-group">
+              <h4 class="filter-title">Rating</h4>
+              <label
+                ><input type="radio" name="rating" value="4" /> ★★★★ & up</label
+              >
+              <label
+                ><input type="radio" name="rating" value="3" /> ★★★ & up</label
+              >
+            </div>
+          </aside>
+
+          <!-- RIGHT: Products -->
+          <div class="products">
+            <div class="top-bar">
+              <span class="result-count" id="resultCount"
+                >Showing 6 products</span
+              >
+              <select class="sort-select" id="sortSelect">
+                <option value="popular">Popular</option>
+                <option value="low">Price: Low to High</option>
+                <option value="high">Price: High to Low</option>
+                <option value="rating">Rating</option>
+              </select>
+            </div>
+
+            <div class="product-grid" id="productGrid">
+              <!-- Product 1 — Matte Lipstick -->
+              <div class="product-card" data-concern="matte" data-price="349">
+                <div class="card-top">
+                  <span class="badge">15% OFF</span>
+                  <button class="wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+                <div class="card-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=600&q=80"
+                    alt="Matte Lipstick"
+                  />
+                </div>
+                <h3 class="p-name">Matte Lipstick - Rose</h3>
+                <p class="p-desc">Long-lasting • 3.5g</p>
+                <div class="p-rating">★★★★★ <span>(89)</span></div>
+                <div class="p-price">
+                  <span class="price">₹349</span>
+                  <span class="mrp">₹410</span>
+                </div>
+                <button class="add-cart">Add to Cart</button>
+              </div>
+
+              <!-- Product 2 — Glossy Lip Gloss -->
+              <div class="product-card" data-concern="glossy" data-price="299">
+                <div class="card-top">
+                  <span class="badge">20% OFF</span>
+                  <button class="wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+                <div class="card-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1631214540553-ff044a3ff1d4?w=600&q=80"
+                    alt="Lip Gloss"
+                  />
+                </div>
+                <h3 class="p-name">Shine Lip Gloss</h3>
+                <p class="p-desc">High shine • 5ml</p>
+                <div class="p-rating">★★★★☆ <span>(142)</span></div>
+                <div class="p-price">
+                  <span class="price">₹299</span>
+                  <span class="mrp">₹375</span>
+                </div>
+                <button class="add-cart">Add to Cart</button>
+              </div>
+
+              <!-- Product 3 — Natural Foundation -->
+              <div class="product-card" data-concern="natural" data-price="899">
+                <div class="card-top">
+                  <span class="badge">25% OFF</span>
+                  <button class="wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+                <div class="card-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1631730359585-38a4935cbec4?w=600&q=80"
+                    alt="Foundation"
+                  />
+                </div>
+                <h3 class="p-name">Natural Glow Foundation</h3>
+                <p class="p-desc">Light coverage • 30ml</p>
+                <div class="p-rating">★★★★★ <span>(178)</span></div>
+                <div class="p-price">
+                  <span class="price">₹899</span>
+                  <span class="mrp">₹1199</span>
+                </div>
+                <button class="add-cart">Add to Cart</button>
+              </div>
+
+              <!-- Product 4 — Bold Eyeshadow -->
+              <div class="product-card" data-concern="bold" data-price="749">
+                <div class="card-top">
+                  <span class="badge">18% OFF</span>
+                  <button class="wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+                <div class="card-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=600&q=80"
+                    alt="Eyeshadow Palette"
+                  />
+                </div>
+                <h3 class="p-name">Bold Eyeshadow Palette</h3>
+                <p class="p-desc">12 shades • Matte + Shimmer</p>
+                <div class="p-rating">★★★★★ <span>(256)</span></div>
+                <div class="p-price">
+                  <span class="price">₹749</span>
+                  <span class="mrp">₹915</span>
+                </div>
+                <button class="add-cart">Add to Cart</button>
+              </div>
+
+              <!-- Product 5 — Shimmer Highlighter -->
+              <div class="product-card" data-concern="shimmer" data-price="599">
+                <div class="card-top">
+                  <span class="badge">22% OFF</span>
+                  <button class="wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+                <div class="card-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?w=600&q=80"
+                    alt="Highlighter"
+                  />
+                </div>
+                <h3 class="p-name">Golden Shimmer Highlighter</h3>
+                <p class="p-desc">Glow boost • 10g</p>
+                <div class="p-rating">★★★★☆ <span>(134)</span></div>
+                <div class="p-price">
+                  <span class="price">₹599</span>
+                  <span class="mrp">₹770</span>
+                </div>
+                <button class="add-cart">Add to Cart</button>
+              </div>
+
+              <!-- Product 6 — Everyday Kajal -->
+              <div
+                class="product-card"
+                data-concern="everyday"
+                data-price="249"
+              >
+                <div class="card-top">
+                  <span class="badge">20% OFF</span>
+                  <button class="wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+                <div class="card-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1625093742435-6fa192b6fb10?w=600&q=80"
+                    alt="Kajal"
+                  />
+                </div>
+                <h3 class="p-name">Everyday Kajal</h3>
+                <p class="p-desc">Smudge-proof • 0.35g</p>
+                <div class="p-rating">★★★★☆ <span>(198)</span></div>
+                <div class="p-price">
+                  <span class="price">₹249</span>
+                  <span class="mrp">₹310</span>
+                </div>
+                <button class="add-cart">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- ===== TOP: 4 Columns ===== -->
+        <div class="footer-top">
+          <!-- Column 1: Brand -->
+          <div class="footer-col brand-col">
+            <h3 class="footer-logo">GlowMuse</h3>
+            <p class="footer-about">
+              Premium skincare & makeup crafted with love. Your daily glow
+              ritual starts here.
+            </p>
+            <div class="social-icons">
+              <a href="#" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="#" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="#" aria-label="Pinterest">
+                <i class="fa-brands fa-pinterest-p"></i>
+              </a>
+              <a href="#" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2: Shop -->
+          <div class="footer-col">
+            <h4 class="footer-title">Shop</h4>
+            <ul class="footer-links">
+              <li><a href="#">Skincare</a></li>
+              <li><a href="#">Makeup</a></li>
+              <li><a href="#">Haircare</a></li>
+              <li><a href="#">Fragrance</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Help -->
+          <div class="footer-col">
+            <h4 class="footer-title">Help</h4>
+            <ul class="footer-links">
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Shipping Info</a></li>
+              <li><a href="#">Returns & Refunds</a></li>
+              <li><a href="#">Track Order</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Newsletter -->
+          <div class="footer-col">
+            <h4 class="footer-title">Stay Glowing</h4>
+            <p class="footer-newsletter-text">
+              Get 10% off your first order + exclusive beauty tips.
+            </p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- ===== BOTTOM BAR ===== -->
+        <div class="footer-bottom">
+          <p>© 2025 GlowMuse. All rights reserved.</p>
+          <div class="footer-bottom-links">
+            <a href="#">Privacy</a>
+            <span>•</span>
+            <a href="#">Terms</a>
+            <span>•</span>
+            <a href="#">Cookies</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="script1.js"></script>
+  </body>
+</html>

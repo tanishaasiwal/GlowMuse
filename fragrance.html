@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GlowMuse</title>
+    <link rel="stylesheet" href="style4.css" />
+    <link rel="stylesheet" href="commerce.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+      integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://api.fontshare.com/css?f[]=clash-display@400,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="logo1.png" alt="" height="50px" />
+      </div>
+      <button
+        class="nav-menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-controls="primaryNav"
+        aria-expanded="false"
+      >
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+      <ul class="nav-links" id="primaryNav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="skincare.html">Skincare</a></li>
+        <li><a href="makeup.html">Makeup</a></li>
+        <li><a href="haircare.html">Haircare</a></li>
+        <li><a href="fragrance.html">Fragrance</a></li>
+      </ul>
+      <div class="nav-icons">
+        <!-- ❤️ Wishlist -->
+        <button class="nav-icon wishlist-icon" aria-label="Wishlist">
+          <i class="fa-regular fa-heart"></i>
+          <span class="wishlist-count" id="wishlistCount">0</span>
+        </button>
+
+        <!-- 🛒 Cart -->
+        <button class="nav-icon cart-icon" aria-label="Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <!-- 👤 User -->
+        <button class="nav-icon user-icon" aria-label="Profile">
+          <i class="fa-regular fa-user"></i>
+        </button>
+      </div>
+    </nav>
+    <main>
+      <!-- ═══════════════════════════════════════════
+       PAGE BANNER
+       ═══════════════════════════════════════════ -->
+      <section class="page-banner">
+        <div class="banner-content">
+          <nav class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span class="current">Fragrance</span>
+          </nav>
+          <h1 class="banner-title">Fragrance Collection</h1>
+          <p class="banner-sub">
+            Wear your aura with our premium range of perfumes, body mists, and
+            deodorants — crafted to leave a lasting impression.
+          </p>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════
+       FRAGRANCE FAMILY SELECTOR
+       ═══════════════════════════════════════════ -->
+      <section class="concern-selector">
+        <div class="concern-container">
+          <span class="concern-tag">🌸 Find Your Scent</span>
+          <h2 class="concern-heading">What's Your Fragrance Vibe?</h2>
+          <p class="concern-sub">
+            Select a family to discover your signature scent
+          </p>
+
+          <div class="concern-pills">
+            <button class="concern-pill active" data-concern="all">
+              <span class="concern-icon">✨</span> All Products
+            </button>
+            <button class="concern-pill" data-concern="floral">
+              <span class="concern-icon">🌸</span> Floral
+            </button>
+            <button class="concern-pill" data-concern="woody">
+              <span class="concern-icon">🌲</span> Woody
+            </button>
+            <button class="concern-pill" data-concern="fresh">
+              <span class="concern-icon">🍃</span> Fresh
+            </button>
+            <button class="concern-pill" data-concern="oriental">
+              <span class="concern-icon">🔥</span> Oriental
+            </button>
+            <button class="concern-pill" data-concern="fruity">
+              <span class="concern-icon">🍓</span> Fruity
+            </button>
+            <button class="concern-pill" data-concern="gourmand">
+              <span class="concern-icon">🍯</span> Gourmand
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════
+       FILTERS + PRODUCTS
+       ═══════════════════════════════════════════ -->
+      <section class="shop-section">
+        <div class="shop-container">
+          <!-- LEFT: Filters -->
+          <aside class="filters">
+            <div class="filter-group">
+              <h4 class="filter-title">Category</h4>
+              <label><input type="checkbox" value="skincare" /> Skincare</label>
+              <label><input type="checkbox" value="makeup" /> Makeup</label>
+              <label><input type="checkbox" value="haircare" /> Haircare</label>
+              <label
+                ><input type="checkbox" value="fragrance" checked />
+                Fragrance</label
+              >
+            </div>
+
+            <div class="filter-group">
+              <h4 class="filter-title">Price Range</h4>
+              <input
+                type="range"
+                min="100"
+                max="3000"
+                value="3000"
+                class="price-slider"
+                id="priceSlider"
+              />
+              <div class="price-labels">
+                <span>₹100</span>
+                <span id="priceValue">₹3000</span>
+              </div>
+            </div>
+
+            <div class="filter-group">
+              <h4 class="filter-title">Product Type</h4>
+              <label><input type="checkbox" value="perfume" /> Perfume</label>
+              <label
+                ><input type="checkbox" value="body-mist" /> Body Mist</label
+              >
+              <label
+                ><input type="checkbox" value="deodorant" /> Deodorant</label
+              >
+              <label><input type="checkbox" value="attar" /> Attar</label>
+            </div>
+
+            <div class="filter-group">
+              <h4 class="filter-title">Family</h4>
+              <label><input type="checkbox" value="floral" /> Floral</label>
+              <label><input type="checkbox" value="woody" /> Woody</label>
+              <label><input type="checkbox" value="fresh" /> Fresh</label>
+              <label><input type="checkbox" value="oriental" /> Oriental</label>
+            </div>
+
+            <div class="filter-group">
+              <h4 class="filter-title">Rating</h4>
+              <label
+                ><input type="radio" name="rating" value="4" /> ★★★★ & up</label
+              >
+              <label
+                ><input type="radio" name="rating" value="3" /> ★★★ & up</label
+              >
+            </div>
+          </aside>
+
+          <!-- RIGHT: Products -->
+          <div class="products">
+            <div class="top-bar">
+              <span class="result-count" id="resultCount"
+                >Showing 6 products</span
+              >
+              <select class="sort-select" id="sortSelect">
+                <option value="popular">Popular</option>
+                <option value="low">Price: Low to High</option>
+                <option value="high">Price: High to Low</option>
+                <option value="rating">Rating</option>
+              </select>
+            </div>
+
+            <div class="product-grid" id="productGrid">
+              <!-- Product 1 — Rose Petal Perfume (Floral) -->
+              <div class="product-card" data-concern="floral" data-price="1299">
+                <div class="card-top">
+                  <span class="badge">10% OFF</span>
+                  <button class="wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+                <div class="card-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=600&q=80"
+                    alt="Rose Petal Perfume"
+                  />
+                </div>
+                <h3 class="p-name">Rose Petal Perfume</h3>
+                <p class="p-desc">Eau de Parfum • 50ml</p>
+                <div class="p-rating">★★★★★ <span>(156)</span></div>
+                <div class="p-price">
+                  <span class="price">₹1299</span>
+                  <span class="mrp">₹1449</span>
+                </div>
+                <button class="add-cart">Add to Cart</button>
+              </div>
+
+              <!-- Product 2 — Sandalwood Attar (Woody) -->
+              <div class="product-card" data-concern="woody" data-price="1899">
+                <div class="card-top">
+                  <span class="badge">15% OFF</span>
+                  <button class="wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+                <div class="card-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=600&q=80"
+                    alt="Sandalwood Attar"
+                  />
+                </div>
+                <h3 class="p-name">Sandalwood Attar</h3>
+                <p class="p-desc">Pure attar • 10ml</p>
+                <div class="p-rating">★★★★★ <span>(89)</span></div>
+                <div class="p-price">
+                  <span class="price">₹1899</span>
+                  <span class="mrp">₹2234</span>
+                </div>
+                <button class="add-cart">Add to Cart</button>
+              </div>
+
+              <!-- Product 3 — Ocean Fresh Body Mist (Fresh) -->
+              <div class="product-card" data-concern="fresh" data-price="399">
+                <div class="card-top">
+                  <span class="badge">20% OFF</span>
+                  <button class="wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+                <div class="card-img">
+                  <img src="perfume.jpeg" alt="Ocean Fresh Body Mist perfume" />
+                </div>
+                <h3 class="p-name">Ocean Fresh Body Mist</h3>
+                <p class="p-desc">Refreshing • 150ml</p>
+                <div class="p-rating">★★★★☆ <span>(210)</span></div>
+                <div class="p-price">
+                  <span class="price">₹399</span>
+                  <span class="mrp">₹499</span>
+                </div>
+                <button class="add-cart">Add to Cart</button>
+              </div>
+
+              <!-- Product 4 — Oud Royale (Oriental) -->
+              <div
+                class="product-card"
+                data-concern="oriental"
+                data-price="2499"
+              >
+                <div class="card-top">
+                  <span class="badge">18% OFF</span>
+                  <button class="wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+                <div class="card-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=600&q=80"
+                    alt="Oud Royale"
+                  />
+                </div>
+                <h3 class="p-name">Oud Royale</h3>
+                <p class="p-desc">Luxury oud • 50ml</p>
+                <div class="p-rating">★★★★★ <span>(134)</span></div>
+                <div class="p-price">
+                  <span class="price">₹2499</span>
+                  <span class="mrp">₹3049</span>
+                </div>
+                <button class="add-cart">Add to Cart</button>
+              </div>
+
+              <!-- Product 5 — Berry Bliss (Fruity) -->
+              <div class="product-card" data-concern="fruity" data-price="599">
+                <div class="card-top">
+                  <span class="badge">25% OFF</span>
+                  <button class="wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+                <div class="card-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?w=600&q=80"
+                    alt="Berry Bliss"
+                  />
+                </div>
+                <h3 class="p-name">Berry Bliss Body Mist</h3>
+                <p class="p-desc">Sweet & fruity • 100ml</p>
+                <div class="p-rating">★★★★☆ <span>(178)</span></div>
+                <div class="p-price">
+                  <span class="price">₹599</span>
+                  <span class="mrp">₹799</span>
+                </div>
+                <button class="add-cart">Add to Cart</button>
+              </div>
+
+              <!-- Product 6 — Vanilla Musk (Gourmand) -->
+              <div
+                class="product-card"
+                data-concern="gourmand"
+                data-price="1099"
+              >
+                <div class="card-top">
+                  <span class="badge">12% OFF</span>
+                  <button class="wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+                <div class="card-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=600&q=80"
+                    alt="Vanilla Musk"
+                  />
+                </div>
+                <h3 class="p-name">Vanilla Musk Perfume</h3>
+                <p class="p-desc">Warm & cozy • 50ml</p>
+                <div class="p-rating">★★★★★ <span>(145)</span></div>
+                <div class="p-price">
+                  <span class="price">₹1099</span>
+                  <span class="mrp">₹1249</span>
+                </div>
+                <button class="add-cart">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- ===== TOP: 4 Columns ===== -->
+        <div class="footer-top">
+          <!-- Column 1: Brand -->
+          <div class="footer-col brand-col">
+            <h3 class="footer-logo">GlowMuse</h3>
+            <p class="footer-about">
+              Premium skincare & makeup crafted with love. Your daily glow
+              ritual starts here.
+            </p>
+            <div class="social-icons">
+              <a href="#" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="#" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="#" aria-label="Pinterest">
+                <i class="fa-brands fa-pinterest-p"></i>
+              </a>
+              <a href="#" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2: Shop -->
+          <div class="footer-col">
+            <h4 class="footer-title">Shop</h4>
+            <ul class="footer-links">
+              <li><a href="#">Skincare</a></li>
+              <li><a href="#">Makeup</a></li>
+              <li><a href="#">Haircare</a></li>
+              <li><a href="#">Fragrance</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Help -->
+          <div class="footer-col">
+            <h4 class="footer-title">Help</h4>
+            <ul class="footer-links">
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Shipping Info</a></li>
+              <li><a href="#">Returns & Refunds</a></li>
+              <li><a href="#">Track Order</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Newsletter -->
+          <div class="footer-col">
+            <h4 class="footer-title">Stay Glowing</h4>
+            <p class="footer-newsletter-text">
+              Get 10% off your first order + exclusive beauty tips.
+            </p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- ===== BOTTOM BAR ===== -->
+        <div class="footer-bottom">
+          <p>© 2025 GlowMuse. All rights reserved.</p>
+          <div class="footer-bottom-links">
+            <a href="#">Privacy</a>
+            <span>•</span>
+            <a href="#">Terms</a>
+            <span>•</span>
+            <a href="#">Cookies</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="script1.js"></script>
+  </body>
+</html>

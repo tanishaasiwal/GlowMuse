@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GlowMuse</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="commerce.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+      integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://api.fontshare.com/css?f[]=clash-display@400,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="announcement-bar">
+        <span class="marquee-scroll"
+          >✨ FREE Shipping above ₹499 • Use code GLOW20 for 20% OFF • Buy 2 Get
+          1 on Lipsticks</span
+        >
+      </div>
+    </header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="logo1.png" alt="" height="50px" />
+      </div>
+      <button
+        class="nav-menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-controls="primaryNav"
+        aria-expanded="false"
+      >
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+      <ul class="nav-links" id="primaryNav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="skincare.html">Skincare</a></li>
+        <li><a href="makeup.html">Makeup</a></li>
+        <li><a href="haircare.html">Haircare</a></li>
+        <li><a href="fragrance.html">Fragrance</a></li>
+      </ul>
+      <div class="nav-icons">
+        <!-- ❤️ Wishlist -->
+        <button class="nav-icon wishlist-icon" aria-label="Wishlist">
+          <i class="fa-regular fa-heart"></i>
+          <span class="wishlist-count" id="wishlistCount">0</span>
+        </button>
+
+        <!-- 🛒 Cart -->
+        <button class="nav-icon cart-icon" aria-label="Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <!-- 👤 User -->
+        <button class="nav-icon user-icon" aria-label="Profile">
+          <i class="fa-regular fa-user"></i>
+        </button>
+      </div>
+    </nav>
+    <main>
+      <div class="hero-section">
+        <div class="hero-container">
+          <div class="hero-img">
+            <div class="hero-overlay"></div>
+            <img src="hero-img1.jpeg" alt="" />
+          </div>
+          <div class="hero-content-parent">
+            <span class="hero-tag">✨ New Collection</span>
+            <h1 class="hero-heading">
+              Four Rituals <br /><span>One Glow</span>
+            </h1>
+            <p class="hero-description">
+              From nourishing skincare and strengthening haircare to indulgent
+              bodycare and soulful fragrance every product is thoughtfully
+              crafted with clean, skin-loving ingredients. Because true beauty
+              isn't just one thing it's a complete ritual, made to celebrate
+              you, every single day.
+            </p>
+            <div class="hero-btn">
+              <button type="button" class="shop-now">Shop Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="category-section">
+        <div class="category-heading">
+          <h2>Shop By Category</h2>
+          <p>Find everything your skin needs</p>
+        </div>
+        <div class="category-conatiner">
+          <div class="category-cards">
+            <div class="card-img">
+              <div class="category-overlay"></div>
+              <img src="serum.png" alt="serum" />
+            </div>
+            <div class="card-content">
+              <h2 class="category-title">Skincare</h2>
+              <p class="category-desc">
+                Healthy, happy skin starts with one simple step
+              </p>
+            </div>
+          </div>
+          <div class="category-cards">
+            <div class="card-img">
+              <div class="category-overlay"></div>
+              <img src="lipstick.jpeg" alt="serum" />
+            </div>
+            <div class="card-content">
+              <h2 class="category-title">Makeup</h2>
+              <p class="category-desc">
+                Create looks that feel effortlessly, undeniably you
+              </p>
+            </div>
+          </div>
+          <div class="category-cards">
+            <div class="card-img">
+              <div class="category-overlay"></div>
+              <img src="haircare.jpeg" alt="serum" />
+            </div>
+            <div class="card-content">
+              <h2 class="category-title">Haircare</h2>
+              <p class="category-desc">
+                Strong roots, shiny ends, hair that turns heads
+              </p>
+            </div>
+          </div>
+          <div class="category-cards">
+            <div class="card-img">
+              <div class="category-overlay"></div>
+              <img src="perfume.jpeg" alt="serum" />
+            </div>
+            <div class="card-content">
+              <h2 class="category-title">Fragrance</h2>
+              <p class="category-desc">
+                A scent that stays with you long after you leave
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="skin-selector" id="skin-selector">
+        <h2 class="skin-heading">Find Your Perfect Match</h2>
+        <p class="skin-sub">
+          Select your skin type to see recommended products
+        </p>
+        <div class="skin-pills">
+          <button class="pill active" data-skin="all">All</button>
+          <button class="pill" data-skin="oily">Oily</button>
+          <button class="pill" data-skin="dry">Dry</button>
+
+          <button class="pill" data-skin="sensitive">Sensitive</button>
+          <button class="pill" data-skin="normal">Normal</button>
+        </div>
+      </section>
+      <!--Filters and product grid-->
+      <section class="shop-section">
+        <div class="shop-container">
+          <!--Left filters-->
+          <div class="filters">
+            <div class="filter-group">
+              <h4 class="filter-title">Category</h4>
+              <label><input type="checkbox" value="skincare" />Skincare</label>
+              <label><input type="checkbox" value="makeup" />Makeup</label>
+              <label><input type="checkbox" value="haircare" />Haircare</label>
+              <label
+                ><input type="checkbox" value="fragrance" />Fragrance</label
+              >
+            </div>
+            <div class="filter-group">
+              <h4 class="filter-title">Price Range</h4>
+              <input
+                type="range"
+                min="100"
+                max="5000"
+                value="5000"
+                class="price-slider"
+                id="priceslider"
+              />
+              <div class="price-labels">
+                <span>₹100</span>
+                <span id="priceValue">₹5000</span>
+              </div>
+            </div>
+            <div class="filter-group">
+              <h4 class="filter-title">Skin Type</h4>
+              <label><input type="checkbox" value="oily" /> Oily</label>
+              <label><input type="checkbox" value="dry" /> Dry</label>
+
+              <label
+                ><input type="checkbox" value="sensitive" /> Sensitive</label
+              >
+              <label><input type="checkbox" value="normal" /> Normal</label>
+            </div>
+
+            <div class="filter-group">
+              <h4 class="filter-title">Rating</h4>
+              <label
+                ><input type="radio" name="rating" value="4" /> ★★★★ & up</label
+              >
+              <label
+                ><input type="radio" name="rating" value="3" /> ★★★ & up</label
+              >
+              <label
+                ><input type="radio" name="rating" value="2" /> ★★ & up</label
+              >
+            </div>
+          </div>
+          <!--right-products-->
+          <div class="products">
+            <div class="top-bar">
+              <span class="result-count" id="resultCount"
+                >Showing 6 products</span
+              >
+              <select class="sort-select" id="sortSelect">
+                <option value="popular">Popular</option>
+                <option value="low">Price: Low to High</option>
+                <option value="high">Price: High to Low</option>
+                <option value="new">Newest</option>
+                <option value="rating">Rating</option>
+              </select>
+            </div>
+            <div class="product-grid" id="productGrid">
+              <div
+                class="product-card"
+                data-category="skincare"
+                data-price="599"
+                data-rating="4.5"
+                data-skin="oily"
+                data-brand="glowmuse"
+              >
+                <div class="card-top">
+                  <span class="badge">20% OFF</span>
+                  <button class="wishlist" aria-label="Wishlist">♡</button>
+                </div>
+                <div class="card-img">
+                  <img src="brand1.png" alt="Glow Serum" />
+                </div>
+                <h3 class="p-name">Glow Vitamin C Serum</h3>
+                <p class="p-desc">Vitamin C • 30ml</p>
+                <div class="p-rating">★★★★☆ <span>(124)</span></div>
+                <div class="p-price">
+                  <span class="price">₹599</span>
+                  <span class="mrp">₹799</span>
+                </div>
+                <button class="add-cart">Add to Cart</button>
+              </div>
+              <div
+                class="product-card"
+                data-category="makeup"
+                data-price="349"
+                data-rating="5"
+                data-skin="normal"
+                data-brand="glowmuse"
+              >
+                <div class="card-top">
+                  <span class="badge">15% OFF</span>
+                  <button class="wishlist">♡</button>
+                </div>
+                <div class="card-img">
+                  <img src="brand2.jpeg" alt="Matte Lipstick" />
+                </div>
+                <h3 class="p-name">Matte Lipstick - Rose</h3>
+                <p class="p-desc">Long-lasting • 3.5g</p>
+                <div class="p-rating">★★★★★ <span>(89)</span></div>
+                <div class="p-price">
+                  <span class="price">₹349</span>
+                  <span class="mrp">₹410</span>
+                </div>
+                <button class="add-cart">Add to Cart</button>
+              </div>
+
+              <div
+                class="product-card"
+                data-category="haircare"
+                data-price="499"
+                data-rating="4"
+                data-skin="dry"
+                data-brand="mamaearth"
+              >
+                <div class="card-top">
+                  <span class="badge">30% OFF</span>
+                  <button class="wishlist">♡</button>
+                </div>
+                <div class="card-img">
+                  <img src="brand3.jpeg" alt="Hair Oil" />
+                </div>
+                <h3 class="p-name">Argan Hair Oil</h3>
+                <p class="p-desc">Nourishing • 100ml</p>
+                <div class="p-rating">★★★★☆ <span>(210)</span></div>
+                <div class="p-price">
+                  <span class="price">₹499</span>
+                  <span class="mrp">₹715</span>
+                </div>
+                <button class="add-cart">Add to Cart</button>
+              </div>
+
+              <div
+                class="product-card"
+                data-category="fragrance"
+                data-price="1299"
+                data-rating="5"
+                data-skin="normal"
+                data-brand="glowmuse"
+              >
+                <div class="card-top">
+                  <span class="badge">10% OFF</span>
+                  <button class="wishlist">♡</button>
+                </div>
+                <div class="card-img">
+                  <img src="brand4.jpeg" alt="Perfume" />
+                </div>
+                <h3 class="p-name">Rose Petal Perfume</h3>
+                <p class="p-desc">Eau de Parfum • 50ml</p>
+                <div class="p-rating">★★★★★ <span>(156)</span></div>
+                <div class="p-price">
+                  <span class="price">₹1299</span>
+                  <span class="mrp">₹1449</span>
+                </div>
+                <button class="add-cart">Add to Cart</button>
+              </div>
+              <div
+                class="product-card"
+                data-category="skincare"
+                data-price="675"
+                data-rating="4.5"
+                data-skin="dry"
+                data-brand="lakme"
+              >
+                <div class="card-top">
+                  <span class="badge">25% OFF</span>
+                  <button class="wishlist">♡</button>
+                </div>
+                <div class="card-img">
+                  <img src="brand5.jpeg" alt="Face Cream" />
+                </div>
+                <h3 class="p-name">Hydrating Face Cream</h3>
+                <p class="p-desc">Moisturizer • 50g</p>
+                <div class="p-rating">★★★★☆ <span>(78)</span></div>
+                <div class="p-price">
+                  <span class="price">₹675</span>
+                  <span class="mrp">₹899</span>
+                </div>
+                <button class="add-cart">Add to Cart</button>
+              </div>
+              <div
+                class="product-card"
+                data-category="skincare"
+                data-price="410"
+                data-rating="4"
+                data-skin="sensitive"
+                data-brand="nykaa"
+              >
+                <div class="card-top">
+                  <span class="badge">18% OFF</span>
+                  <button class="wishlist">♡</button>
+                </div>
+                <div class="card-img">
+                  <img src="brand6png.png" alt="Cleanser" />
+                </div>
+                <h3 class="p-name">Gentle Foaming Cleanser</h3>
+                <p class="p-desc">Daily use • 150ml</p>
+                <div class="p-rating">★★★★☆ <span>(92)</span></div>
+                <div class="p-price">
+                  <span class="price">₹410</span>
+                  <span class="mrp">₹500</span>
+                </div>
+                <button class="add-cart">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="offers-section">
+        <div class="offers-conatainer">
+          <div class="offers-card">
+            <span class="offer-tag">🎁 LIMITED TIME</span>
+            <h2 class="offer-heading">FLAT 30% OFF</h2>
+            <p class="offer-desc">On All Skincare</p>
+            <button type="button" class="offer-btn">Shop Now</button>
+            <div class="offer-timer">
+              <span class="offer-end">⏰ Offer ends in</span>
+              <span class="timer" id="timer1">02:14:36</span>
+            </div>
+          </div>
+          <div class="offers-card">
+            <span class="offer-tag">🎁 LIMITED TIME</span>
+            <h2 class="offer-heading">BUY 2 GET 1</h2>
+            <p class="offer-desc">On All Lipsticks</p>
+            <button type="button" class="offer-btn">Grab Deal</button>
+            <div class="offer-timer">
+              <span class="offer-end">⏰ Offer ends in</span>
+              <span class="timer" id="timer2">02:14:36</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="product-detail-section">
+        <div class="product-container">
+          <div class="product-left">
+            <div class="main-img">
+              <img src="thumbnail.first.jpeg" alt="" />
+            </div>
+            <div class="thumbnail-img">
+              <div class="img active">
+                <img src="thumbnail.first.jpeg" alt="" />
+              </div>
+              <div class="img">
+                <img src="thumbnail-second.jpeg" alt="" />
+              </div>
+              <div class="img">
+                <img src="thumbnail.third.jpeg" alt="" />
+              </div>
+              <div class="img">
+                <img src="thumbnail.fourth.jpeg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="product-right-content">
+            <span class="product-tag">🏆 BESTSELLER </span>
+            <h2 class="product-heading">Glow Vitamin C Serum</h2>
+            <span class="rating">⭐⭐⭐⭐⭐ 4.8 (124 reviews)</span>
+            <div class="pirce">
+              <p>₹599</p>
+              <p>₹799</p>
+              <p>25% OFF</p>
+            </div>
+            <div class="skin-type">
+              <span>Oily</span>
+              <span>Dry</span>
+              <span>Normal</span>
+            </div>
+            <div class="size">
+              <span>30ml</span>
+              <span>50ml</span>
+            </div>
+            <div class="product-btn">
+              <button type="button" class="add-to-cart">Add to Cart</button>
+              <button type="button" class="buy-now">Buy Now</button>
+            </div>
+            <div class="points">
+              <span
+                ><i class="fa-solid fa-check" style="color: rgb(0, 0, 0)"></i
+                >Dermatologist Tested</span
+              >
+              <span
+                ><i class="fa-solid fa-check" style="color: rgb(0, 0, 0)"></i
+                >Cruelty Free
+              </span>
+              <span
+                ><i class="fa-solid fa-check" style="color: rgb(0, 0, 0)"></i>
+                Free Shipping
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="reviews-section">
+        <div class="reviews-container">
+          <!-- ===== SECTION HEADING ===== -->
+          <h2 class="reviews-heading">Customer Reviews</h2>
+          <p class="reviews-sub">Real reviews from real customers</p>
+
+          <!-- ===== RATING SUMMARY ===== -->
+          <div class="rating-summary">
+            <!-- Left: Big Rating -->
+            <div class="rating-left">
+              <div class="rating-big">4.8</div>
+              <div class="rating-stars">★★★★★</div>
+              <div class="rating-total">Based on 124 reviews</div>
+            </div>
+
+            <!-- Right: Progress Bars -->
+            <div class="rating-bars">
+              <div class="bar-row">
+                <span class="bar-label">5★</span>
+                <div class="bar-track">
+                  <div class="bar-fill" style="width: 78%"></div>
+                </div>
+                <span class="bar-percent">78%</span>
+              </div>
+              <div class="bar-row">
+                <span class="bar-label">4★</span>
+                <div class="bar-track">
+                  <div class="bar-fill" style="width: 15%"></div>
+                </div>
+                <span class="bar-percent">15%</span>
+              </div>
+              <div class="bar-row">
+                <span class="bar-label">3★</span>
+                <div class="bar-track">
+                  <div class="bar-fill" style="width: 5%"></div>
+                </div>
+                <span class="bar-percent">5%</span>
+              </div>
+              <div class="bar-row">
+                <span class="bar-label">2★</span>
+                <div class="bar-track">
+                  <div class="bar-fill" style="width: 1%"></div>
+                </div>
+                <span class="bar-percent">1%</span>
+              </div>
+              <div class="bar-row">
+                <span class="bar-label">1★</span>
+                <div class="bar-track">
+                  <div class="bar-fill" style="width: 1%"></div>
+                </div>
+                <span class="bar-percent">1%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== WRITE A REVIEW BUTTON ===== -->
+          <div class="write-review-wrap">
+            <button class="write-review-btn">✏️ Write a Review</button>
+          </div>
+
+          <!-- ===== DIVIDER ===== -->
+          <hr class="reviews-divider" />
+
+          <!-- ===== REVIEWS LIST ===== -->
+          <div class="reviews-list">
+            <!-- Review 1 -->
+            <div class="review-card">
+              <div class="review-top">
+                <div class="reviewer-info">
+                  <div class="reviewer-avatar">P</div>
+                  <div>
+                    <div class="reviewer-name">
+                      Priya S. <span class="verified">✓ Verified</span>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                  </div>
+                </div>
+                <span class="review-date">2 weeks ago</span>
+              </div>
+              <p class="review-text">
+                "Best serum I've used! Skin glowing in 2 weeks."
+              </p>
+              <div class="review-actions">
+                <button class="review-btn">👍 Helpful (24)</button>
+                <button class="review-btn">💬 Reply</button>
+              </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="review-card">
+              <div class="review-top">
+                <div class="reviewer-info">
+                  <div class="reviewer-avatar">A</div>
+                  <div>
+                    <div class="reviewer-name">
+                      Anjali M. <span class="verified">✓ Verified</span>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                  </div>
+                </div>
+                <span class="review-date">1 month ago</span>
+              </div>
+              <p class="review-text">
+                "Love how light it feels on my skin. No stickiness and my dark
+                spots are fading."
+              </p>
+              <div class="review-actions">
+                <button class="review-btn">👍 Helpful (18)</button>
+                <button class="review-btn">💬 Reply</button>
+              </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="review-card">
+              <div class="review-top">
+                <div class="reviewer-info">
+                  <div class="reviewer-avatar">R</div>
+                  <div>
+                    <div class="reviewer-name">
+                      Riya K. <span class="verified">✓ Verified</span>
+                    </div>
+                    <div class="review-stars">★★★★☆</div>
+                  </div>
+                </div>
+                <span class="review-date">1 month ago</span>
+              </div>
+              <p class="review-text">
+                "Great product, but I wish the bottle was bigger. Results are
+                visible though!"
+              </p>
+              <div class="review-actions">
+                <button class="review-btn">👍 Helpful (12)</button>
+                <button class="review-btn">💬 Reply</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- ===== TOP: 4 Columns ===== -->
+        <div class="footer-top">
+          <!-- Column 1: Brand -->
+          <div class="footer-col brand-col">
+            <h3 class="footer-logo">GlowMuse</h3>
+            <p class="footer-about">
+              Premium skincare & makeup crafted with love. Your daily glow
+              ritual starts here.
+            </p>
+            <div class="social-icons">
+              <a href="#" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="#" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="#" aria-label="Pinterest">
+                <i class="fa-brands fa-pinterest-p"></i>
+              </a>
+              <a href="#" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2: Shop -->
+          <div class="footer-col">
+            <h4 class="footer-title">Shop</h4>
+            <ul class="footer-links">
+              <li><a href="#">Skincare</a></li>
+              <li><a href="#">Makeup</a></li>
+              <li><a href="#">Haircare</a></li>
+              <li><a href="#">Fragrance</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Help -->
+          <div class="footer-col">
+            <h4 class="footer-title">Help</h4>
+            <ul class="footer-links">
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Shipping Info</a></li>
+              <li><a href="#">Returns & Refunds</a></li>
+              <li><a href="#">Track Order</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Newsletter -->
+          <div class="footer-col">
+            <h4 class="footer-title">Stay Glowing</h4>
+            <p class="footer-newsletter-text">
+              Get 10% off your first order + exclusive beauty tips.
+            </p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- ===== BOTTOM BAR ===== -->
+        <div class="footer-bottom">
+          <p>© 2025 GlowMuse. All rights reserved.</p>
+          <div class="footer-bottom-links">
+            <a href="#">Privacy</a>
+            <span>•</span>
+            <a href="#">Terms</a>
+            <span>•</span>
+            <a href="#">Cookies</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

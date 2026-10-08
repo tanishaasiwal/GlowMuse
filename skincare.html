@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GlowMuse</title>
+    <link rel="stylesheet" href="style1.css" />
+    <link rel="stylesheet" href="commerce.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+      integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://api.fontshare.com/css?f[]=clash-display@400,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="logo1.png" alt="" height="50px" />
+      </div>
+      <button
+        class="nav-menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-controls="primaryNav"
+        aria-expanded="false"
+      >
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+      <ul class="nav-links" id="primaryNav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="skincare.html">Skincare</a></li>
+        <li><a href="makeup.html">Makeup</a></li>
+        <li><a href="haircare.html">Haircare</a></li>
+        <li><a href="fragrance.html">Fragrance</a></li>
+      </ul>
+      <div class="nav-icons">
+        <!-- ❤️ Wishlist -->
+        <button class="nav-icon wishlist-icon" aria-label="Wishlist">
+          <i class="fa-regular fa-heart"></i>
+          <span class="wishlist-count" id="wishlistCount">0</span>
+        </button>
+
+        <!-- 🛒 Cart -->
+        <button class="nav-icon cart-icon" aria-label="Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <!-- 👤 User -->
+        <button class="nav-icon user-icon" aria-label="Profile">
+          <i class="fa-regular fa-user"></i>
+        </button>
+      </div>
+    </nav>
+    <main>
+      <!-- ═══════════════════════════════════════════
+       CONCERN SELECTOR
+       ═══════════════════════════════════════════ -->
+      <section class="concern-selector">
+        <div class="concern-container">
+          <span class="concern-tag">✨ Personalized</span>
+          <h2 class="concern-heading">What's Your Skin Concern?</h2>
+          <p class="concern-sub">Select a concern to see targeted solutions</p>
+
+          <div class="concern-pills">
+            <button class="concern-pill active" data-concern="all">
+              <span class="concern-icon">✨</span> All Products
+            </button>
+            <button class="concern-pill" data-concern="acne">
+              <span class="concern-icon">🌿</span> Acne
+            </button>
+            <button class="concern-pill" data-concern="aging">
+              <span class="concern-icon">⏳</span> Aging
+            </button>
+            <button class="concern-pill" data-concern="pigmentation">
+              <span class="concern-icon">☀️</span> Pigmentation
+            </button>
+            <button class="concern-pill" data-concern="dryness">
+              <span class="concern-icon">💧</span> Dryness
+            </button>
+            <button class="concern-pill" data-concern="dullness">
+              <span class="concern-icon">✨</span> Dullness
+            </button>
+            <button class="concern-pill" data-concern="dark-circles">
+              <span class="concern-icon">👁️</span> Dark Circles
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════
+       PRODUCTS
+       ═══════════════════════════════════════════ -->
+      <section class="shop-section">
+        <div class="shop-container">
+          <div class="top-bar">
+            <span class="result-count" id="resultCount"
+              >Showing 6 products</span
+            >
+          </div>
+
+          <div class="product-grid" id="productGrid">
+            <!-- Product 1 — Dullness -->
+            <div class="product-card" data-concern="dullness">
+              <div class="card-top">
+                <span class="badge">20% OFF</span>
+                <button class="wishlist">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+              <div class="card-img">
+                <img src="skincare1.jpeg" alt="Vitamin C Serum" />
+              </div>
+              <h3 class="p-name">Glow Vitamin C Serum</h3>
+              <p class="p-desc">Brightening • 30ml</p>
+              <div class="p-rating">★★★★☆ <span>(124)</span></div>
+              <div class="p-price">
+                <span class="price">₹599</span>
+                <span class="mrp">₹799</span>
+              </div>
+              <button class="add-cart">Add to Cart</button>
+            </div>
+
+            <!-- Product 2 — Dryness -->
+            <div class="product-card" data-concern="dryness">
+              <div class="card-top">
+                <span class="badge">25% OFF</span>
+                <button class="wishlist">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+              <div class="card-img">
+                <img src="skincare2.webp" alt="Hyaluronic Moisturizer" />
+              </div>
+              <h3 class="p-name">Hyaluronic Moisturizer</h3>
+              <p class="p-desc">Deep hydration • 50g</p>
+              <div class="p-rating">★★★★☆ <span>(78)</span></div>
+              <div class="p-price">
+                <span class="price">₹675</span>
+                <span class="mrp">₹899</span>
+              </div>
+              <button class="add-cart">Add to Cart</button>
+            </div>
+
+            <!-- Product 3 — Acne -->
+            <div class="product-card" data-concern="acne">
+              <div class="card-top">
+                <span class="badge">18% OFF</span>
+                <button class="wishlist">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+              <div class="card-img">
+                <img src="skincare3jpeg.jpeg" alt="Foaming Cleanser" />
+              </div>
+              <h3 class="p-name">Gentle Foaming Cleanser</h3>
+              <p class="p-desc">Daily use • 150ml</p>
+              <div class="p-rating">★★★★☆ <span>(92)</span></div>
+              <div class="p-price">
+                <span class="price">₹410</span>
+                <span class="mrp">₹500</span>
+              </div>
+              <button class="add-cart">Add to Cart</button>
+            </div>
+
+            <!-- Product 4 — Pigmentation -->
+            <div class="product-card" data-concern="pigmentation">
+              <div class="card-top">
+                <span class="badge">15% OFF</span>
+                <button class="wishlist">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+              <div class="card-img">
+                <img src="skincare4.jpeg" alt="Niacinamide Serum" />
+              </div>
+              <h3 class="p-name">Niacinamide 10% Serum</h3>
+              <p class="p-desc">Oil control • 30ml</p>
+              <div class="p-rating">★★★★★ <span>(203)</span></div>
+              <div class="p-price">
+                <span class="price">₹899</span>
+                <span class="mrp">₹1059</span>
+              </div>
+              <button class="add-cart">Add to Cart</button>
+            </div>
+
+            <!-- Product 5 — Aging -->
+            <div class="product-card" data-concern="aging">
+              <div class="card-top">
+                <span class="badge">22% OFF</span>
+                <button class="wishlist">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+              <div class="card-img">
+                <img src="skincare5.jpeg" alt="Retinol Night Cream" />
+              </div>
+              <h3 class="p-name">Retinol Night Cream</h3>
+              <p class="p-desc">Anti-aging • 50g</p>
+              <div class="p-rating">★★★★☆ <span>(64)</span></div>
+              <div class="p-price">
+                <span class="price">₹550</span>
+                <span class="mrp">₹699</span>
+              </div>
+              <button class="add-cart">Add to Cart</button>
+            </div>
+
+            <!-- Product 6 — Dark Circles -->
+            <div class="product-card" data-concern="dark-circles">
+              <div class="card-top">
+                <span class="badge">20% OFF</span>
+                <button class="wishlist">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+              <div class="card-img">
+                <img src="sjincare6.jpeg" alt="Eye Cream" />
+              </div>
+              <h3 class="p-name">Brightening Eye Cream</h3>
+              <p class="p-desc">Under-eye care • 15ml</p>
+              <div class="p-rating">★★★★☆ <span>(145)</span></div>
+              <div class="p-price">
+                <span class="price">₹350</span>
+                <span class="mrp">₹440</span>
+              </div>
+              <button class="add-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- ===== TOP: 4 Columns ===== -->
+        <div class="footer-top">
+          <!-- Column 1: Brand -->
+          <div class="footer-col brand-col">
+            <h3 class="footer-logo">GlowMuse</h3>
+            <p class="footer-about">
+              Premium skincare & makeup crafted with love. Your daily glow
+              ritual starts here.
+            </p>
+            <div class="social-icons">
+              <a href="#" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="#" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="#" aria-label="Pinterest">
+                <i class="fa-brands fa-pinterest-p"></i>
+              </a>
+              <a href="#" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2: Shop -->
+          <div class="footer-col">
+            <h4 class="footer-title">Shop</h4>
+            <ul class="footer-links">
+              <li><a href="#">Skincare</a></li>
+              <li><a href="#">Makeup</a></li>
+              <li><a href="#">Haircare</a></li>
+              <li><a href="#">Fragrance</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Help -->
+          <div class="footer-col">
+            <h4 class="footer-title">Help</h4>
+            <ul class="footer-links">
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Shipping Info</a></li>
+              <li><a href="#">Returns & Refunds</a></li>
+              <li><a href="#">Track Order</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Newsletter -->
+          <div class="footer-col">
+            <h4 class="footer-title">Stay Glowing</h4>
+            <p class="footer-newsletter-text">
+              Get 10% off your first order + exclusive beauty tips.
+            </p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- ===== BOTTOM BAR ===== -->
+        <div class="footer-bottom">
+          <p>© 2025 GlowMuse. All rights reserved.</p>
+          <div class="footer-bottom-links">
+            <a href="#">Privacy</a>
+            <span>•</span>
+            <a href="#">Terms</a>
+            <span>•</span>
+            <a href="#">Cookies</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="script1.js"></script>
+  </body>
+</html>

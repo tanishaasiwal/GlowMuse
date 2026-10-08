@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GlowMuse</title>
+    <link rel="stylesheet" href="style3.css" />
+    <link rel="stylesheet" href="commerce.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+      integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://api.fontshare.com/css?f[]=clash-display@400,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="logo1.png" alt="" height="50px" />
+      </div>
+      <button
+        class="nav-menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-controls="primaryNav"
+        aria-expanded="false"
+      >
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+      <ul class="nav-links" id="primaryNav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="skincare.html">Skincare</a></li>
+        <li><a href="makeup.html">Makeup</a></li>
+        <li><a href="haircare.html">Haircare</a></li>
+        <li><a href="fragrance.html">Fragrance</a></li>
+      </ul>
+      <div class="nav-icons">
+        <!-- ❤️ Wishlist -->
+        <button class="nav-icon wishlist-icon" aria-label="Wishlist">
+          <i class="fa-regular fa-heart"></i>
+          <span class="wishlist-count" id="wishlistCount">0</span>
+        </button>
+
+        <!-- 🛒 Cart -->
+        <button class="nav-icon cart-icon" aria-label="Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <!-- 👤 User -->
+        <button class="nav-icon user-icon" aria-label="Profile">
+          <i class="fa-regular fa-user"></i>
+        </button>
+      </div>
+    </nav>
+    <main>
+      <!-- ═══════════════════════════════════════════
+       PAGE BANNER
+       ═══════════════════════════════════════════ -->
+      <section class="page-banner">
+        <div class="banner-content">
+          <nav class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span class="current">Haircare</span>
+          </nav>
+          <h1 class="banner-title">Haircare Collection</h1>
+          <p class="banner-sub">
+            Nourish from root to tip with our premium range of hair oils,
+            shampoos, and treatments — crafted for every hair type.
+          </p>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════
+       HAIR TYPE SELECTOR
+       ═══════════════════════════════════════════ -->
+      <section class="concern-selector">
+        <div class="concern-container">
+          <span class="concern-tag">💇 Find Your Match</span>
+          <h2 class="concern-heading">What's Your Hair Type?</h2>
+          <p class="concern-sub">
+            Select your hair type to see recommended products
+          </p>
+
+          <div class="concern-pills">
+            <button class="concern-pill active" data-concern="all">
+              <span class="concern-icon">✨</span> All Products
+            </button>
+            <button class="concern-pill" data-concern="straight">
+              <span class="concern-icon">📏</span> Straight
+            </button>
+            <button class="concern-pill" data-concern="wavy">
+              <span class="concern-icon">🌊</span> Wavy
+            </button>
+            <button class="concern-pill" data-concern="curly">
+              <span class="concern-icon">🌀</span> Curly
+            </button>
+            <button class="concern-pill" data-concern="coily">
+              <span class="concern-icon">☁️</span> Coily
+            </button>
+            <button class="concern-pill" data-concern="damaged">
+              <span class="concern-icon">💔</span> Damaged
+            </button>
+            <button class="concern-pill" data-concern="thin">
+              <span class="concern-icon">🌿</span> Thin
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════
+       FILTERS + PRODUCTS
+       ═══════════════════════════════════════════ -->
+      <section class="shop-section">
+        <div class="shop-container">
+          <!-- LEFT: Filters -->
+          <aside class="filters">
+            <div class="filter-group">
+              <h4 class="filter-title">Category</h4>
+              <label><input type="checkbox" value="skincare" /> Skincare</label>
+              <label><input type="checkbox" value="makeup" /> Makeup</label>
+              <label
+                ><input type="checkbox" value="haircare" checked />
+                Haircare</label
+              >
+              <label
+                ><input type="checkbox" value="fragrance" /> Fragrance</label
+              >
+            </div>
+
+            <div class="filter-group">
+              <h4 class="filter-title">Price Range</h4>
+              <input
+                type="range"
+                min="100"
+                max="2000"
+                value="2000"
+                class="price-slider"
+                id="priceSlider"
+              />
+              <div class="price-labels">
+                <span>₹100</span>
+                <span id="priceValue">₹2000</span>
+              </div>
+            </div>
+
+            <div class="filter-group">
+              <h4 class="filter-title">Product Type</h4>
+              <label><input type="checkbox" value="oil" /> Hair Oil</label>
+              <label><input type="checkbox" value="shampoo" /> Shampoo</label>
+              <label
+                ><input type="checkbox" value="conditioner" />
+                Conditioner</label
+              >
+              <label><input type="checkbox" value="serum" /> Hair Serum</label>
+              <label><input type="checkbox" value="mask" /> Hair Mask</label>
+            </div>
+
+            <div class="filter-group">
+              <h4 class="filter-title">Concern</h4>
+              <label
+                ><input type="checkbox" value="hairfall" /> Hair Fall</label
+              >
+              <label><input type="checkbox" value="dandruff" /> Dandruff</label>
+              <label><input type="checkbox" value="frizz" /> Frizz</label>
+              <label><input type="checkbox" value="dryness" /> Dryness</label>
+            </div>
+
+            <div class="filter-group">
+              <h4 class="filter-title">Rating</h4>
+              <label
+                ><input type="radio" name="rating" value="4" /> ★★★★ & up</label
+              >
+              <label
+                ><input type="radio" name="rating" value="3" /> ★★★ & up</label
+              >
+            </div>
+          </aside>
+
+          <!-- RIGHT: Products -->
+          <div class="products">
+            <div class="top-bar">
+              <span class="result-count" id="resultCount"
+                >Showing 6 products</span
+              >
+              <select class="sort-select" id="sortSelect">
+                <option value="popular">Popular</option>
+                <option value="low">Price: Low to High</option>
+                <option value="high">Price: High to Low</option>
+                <option value="rating">Rating</option>
+              </select>
+            </div>
+
+            <div class="product-grid" id="productGrid">
+              <!-- Product 1 — Argan Hair Oil (Straight) -->
+              <div
+                class="product-card"
+                data-concern="straight"
+                data-price="499"
+              >
+                <div class="card-top">
+                  <span class="badge">30% OFF</span>
+                  <button class="wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+                <div class="card-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=600&q=80"
+                    alt="Argan Hair Oil"
+                  />
+                </div>
+                <h3 class="p-name">Argan Hair Oil</h3>
+                <p class="p-desc">Nourishing • 100ml</p>
+                <div class="p-rating">★★★★☆ <span>(210)</span></div>
+                <div class="p-price">
+                  <span class="price">₹499</span>
+                  <span class="mrp">₹715</span>
+                </div>
+                <button class="add-cart">Add to Cart</button>
+              </div>
+
+              <!-- Product 2 — Curl Defining Cream (Curly) -->
+              <div class="product-card" data-concern="curly" data-price="549">
+                <div class="card-top">
+                  <span class="badge">25% OFF</span>
+                  <button class="wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+                <div class="card-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=600&q=80"
+                    alt="Curl Cream"
+                  />
+                </div>
+                <h3 class="p-name">Curl Defining Cream</h3>
+                <p class="p-desc">Frizz control • 200ml</p>
+                <div class="p-rating">★★★★★ <span>(156)</span></div>
+                <div class="p-price">
+                  <span class="price">₹549</span>
+                  <span class="mrp">₹730</span>
+                </div>
+                <button class="add-cart">Add to Cart</button>
+              </div>
+
+              <!-- Product 3 — Sulfate-Free Shampoo (Wavy) -->
+              <div class="product-card" data-concern="wavy" data-price="349">
+                <div class="card-top">
+                  <span class="badge">20% OFF</span>
+                  <button class="wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+                <div class="card-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?w=600&q=80"
+                    alt="Shampoo"
+                  />
+                </div>
+                <h3 class="p-name">Sulfate-Free Shampoo</h3>
+                <p class="p-desc">Gentle wash • 250ml</p>
+                <div class="p-rating">★★★★☆ <span>(89)</span></div>
+                <div class="p-price">
+                  <span class="price">₹349</span>
+                  <span class="mrp">₹465</span>
+                </div>
+                <button class="add-cart">Add to Cart</button>
+              </div>
+
+              <!-- Product 4 — Keratin Repair Mask (Damaged) -->
+              <div class="product-card" data-concern="damaged" data-price="699">
+                <div class="card-top">
+                  <span class="badge">28% OFF</span>
+                  <button class="wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+                <div class="card-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1595475207225-428b62bda831?w=600&q=80"
+                    alt="Hair Mask"
+                  />
+                </div>
+                <h3 class="p-name">Keratin Repair Mask</h3>
+                <p class="p-desc">Deep repair • 200g</p>
+                <div class="p-rating">★★★★★ <span>(178)</span></div>
+                <div class="p-price">
+                  <span class="price">₹699</span>
+                  <span class="mrp">₹970</span>
+                </div>
+                <button class="add-cart">Add to Cart</button>
+              </div>
+
+              <!-- Product 5 — Volumizing Serum (Thin) -->
+              <div class="product-card" data-concern="thin" data-price="599">
+                <div class="card-top">
+                  <span class="badge">22% OFF</span>
+                  <button class="wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+                <div class="card-img">
+                  <img src="serum.png" alt="Hair Serum" />
+                </div>
+                <h3 class="p-name">Volumizing Hair Serum</h3>
+                <p class="p-desc">Volume boost • 50ml</p>
+                <div class="p-rating">★★★★☆ <span>(134)</span></div>
+                <div class="p-price">
+                  <span class="price">₹599</span>
+                  <span class="mrp">₹770</span>
+                </div>
+                <button class="add-cart">Add to Cart</button>
+              </div>
+
+              <!-- Product 6 — Co-Wash Cleanser (Coily) -->
+              <div class="product-card" data-concern="coily" data-price="449">
+                <div class="card-top">
+                  <span class="badge">18% OFF</span>
+                  <button class="wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+                <div class="card-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600&q=80"
+                    alt="Co-Wash"
+                  />
+                </div>
+                <h3 class="p-name">Co-Wash Cleanser</h3>
+                <p class="p-desc">Gentle co-wash • 300ml</p>
+                <div class="p-rating">★★★★☆ <span>(92)</span></div>
+                <div class="p-price">
+                  <span class="price">₹449</span>
+                  <span class="mrp">₹550</span>
+                </div>
+                <button class="add-cart">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- ===== TOP: 4 Columns ===== -->
+        <div class="footer-top">
+          <!-- Column 1: Brand -->
+          <div class="footer-col brand-col">
+            <h3 class="footer-logo">GlowMuse</h3>
+            <p class="footer-about">
+              Premium skincare & makeup crafted with love. Your daily glow
+              ritual starts here.
+            </p>
+            <div class="social-icons">
+              <a href="#" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="#" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="#" aria-label="Pinterest">
+                <i class="fa-brands fa-pinterest-p"></i>
+              </a>
+              <a href="#" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2: Shop -->
+          <div class="footer-col">
+            <h4 class="footer-title">Shop</h4>
+            <ul class="footer-links">
+              <li><a href="#">Skincare</a></li>
+              <li><a href="#">Makeup</a></li>
+              <li><a href="#">Haircare</a></li>
+              <li><a href="#">Fragrance</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Help -->
+          <div class="footer-col">
+            <h4 class="footer-title">Help</h4>
+            <ul class="footer-links">
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Shipping Info</a></li>
+              <li><a href="#">Returns & Refunds</a></li>
+              <li><a href="#">Track Order</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Newsletter -->
+          <div class="footer-col">
+            <h4 class="footer-title">Stay Glowing</h4>
+            <p class="footer-newsletter-text">
+              Get 10% off your first order + exclusive beauty tips.
+            </p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- ===== BOTTOM BAR ===== -->
+        <div class="footer-bottom">
+          <p>© 2025 GlowMuse. All rights reserved.</p>
+          <div class="footer-bottom-links">
+            <a href="#">Privacy</a>
+            <span>•</span>
+            <a href="#">Terms</a>
+            <span>•</span>
+            <a href="#">Cookies</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="script1.js"></script>
+  </body>
+</html>
