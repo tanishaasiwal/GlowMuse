@@ -293,21 +293,21 @@
   transform: scale(1.1);
 }
 .card-content {
-  padding: 10px 20px;
+  padding: 10px 16px;
 }
 .card-content h2 {
   font-family: Poppins;
   font-size: 30px;
   color: #252222;
   letter-spacing: 1px;
-  margin-bottom: 15px;
+  margin-bottom: 8px;
 }
 .card-content p {
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 18px;
   color: #7a6f6b;
-  margin-bottom: 36px;
+  margin-bottom: 12px;
   line-height: 1.5;
 }
 
@@ -1848,7 +1848,7 @@
 }
 
 .category-cards .card-img {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
   overflow: hidden;
 }
 
@@ -2016,17 +2016,18 @@
     font-size: 15px;
   }
 
+  
   .category-cards .card-content {
-    padding: 12px 14px;
+    padding: 10px 12px;
   }
 
   .category-cards .card-content h2 {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     font-size: 20px;
   }
 
   .category-cards .card-content p {
-    margin-bottom: 14px;
+    margin-bottom: 8px;
     font-size: 14px;
   }
 
