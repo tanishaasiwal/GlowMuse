@@ -206,7 +206,7 @@
 .hero-heading {
   font-family: "Clash Display";
   font-weight: 600;
-  font-size: 70px;
+  font-size: 75px;
   line-height: 1.1;
   color: #3e2c2c;
   margin-bottom: 20px;
@@ -218,6 +218,7 @@
   letter-spacing: 1px;
   margin-bottom: 30px;
   line-height: 1.5;
+   font-weight: 500;
 }
 .hero-btn {
   display: flex;
@@ -1869,7 +1870,9 @@
   .category-section {
     padding: 48px 5%;
   }
-
+.hero-description {
+    width: 70%;
+  }
   .category-heading h2 {
     font-size: 42px;
   }
@@ -1984,7 +1987,7 @@
   }
 
   .hero-description {
-    width: 82%;
+    width: 60%;
     max-width: 340px;
     margin-bottom: 20px;
     font-size: 14px;
